@@ -1,0 +1,614 @@
+/* 
+ * NEXPUS Corporate Website Stylesheet - v2.0
+ * 모던 & 리치 컨텐츠 디자인
+ * 메인 컬러: #022562 (Deep Blue)
+ * 서브 컬러: #0dbad8 (Cyan)
+ */
+
+:root {
+  --primary-color: #022562; /* 넥스퍼스 메인 블루 */
+  --sub-color: #0dbad8; /* 넥스퍼스 서브 사이언 */
+  --text-dark: #1a1a1a;
+  --text-light: #4a4a4a;
+  --bg-white: #ffffff;
+  --bg-light: #f4f7fa;
+  --bg-dark: #01163a;
+  --container-width: 1200px;
+  --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --- 기본 설정 --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Pretendard", "Inter", sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  word-break: keep-all;
+}
+
+.container {
+  width: 92%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0; /* 여백 조정 */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.section-title.white {
+  color: #fff;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.white-opacity {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+.bg-dark {
+  background-color: var(--bg-dark);
+  color: #fff;
+}
+
+/* --- 3. 헤더 및 내비게이션 (모던 리디자인) --- */
+header {
+  width: 95%;
+  max-width: var(--container-width);
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+
+header.scrolled {
+  width: 100%;
+  top: 0;
+  border-radius: 0;
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 70px; /* 로고 이미지 높이 조정 */
+  width: auto;
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+}
+
+.nav-link {
+  padding: 8px 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.nav-link:hover {
+  color: var(--sub-color);
+  background-color: rgba(13, 186, 216, 0.05);
+}
+
+.nav-link.active-link {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+/* 모바일 메뉴 버튼 스타일 보강 */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.nav-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+/* 햄버거 애니메이션 */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* --- 히어로 섹션 --- */
+.hero-section {
+  height: 95vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #053b94 100%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-top: 80px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 15px;
+  background: rgba(13, 186, 216, 0.2);
+  border: 1px solid var(--sub-color);
+  color: var(--sub-color);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.hero-title span {
+  color: var(--sub-color);
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 45px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 18px 45px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none; /* 밑줄 제거 */
+  transition: var(--transition);
+}
+
+.btn-sub {
+  background-color: var(--sub-color);
+  color: #fff;
+}
+.btn-sub:hover {
+  background-color: #0aa5c1;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 15px;
+}
+.btn-outline:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+/* --- 강점 섹션 (About) --- */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+.strengths-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.strength-item {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.strength-item:hover {
+  transform: translateY(-10px);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-light);
+  color: var(--sub-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.strength-item h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* --- 서비스 섹션 상세 --- */
+.service-box {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.service-box.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  flex: 1;
+  height: 350px;
+  background: var(--primary-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.1; /* 배경 느낌 */
+  position: relative;
+}
+
+.service-image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--primary-color);
+  top: 20px;
+  left: 20px;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.service-image.sub {
+  background: var(--sub-color);
+}
+.service-image.sub::after {
+  border-color: var(--sub-color);
+}
+
+.service-info {
+  flex: 1.2;
+}
+.service-info h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.check-list {
+  margin-bottom: 25px;
+}
+.check-list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--sub-color);
+  font-weight: 900;
+}
+
+/* --- 프로세스 단계 --- */
+.process-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  margin-bottom: -30px;
+}
+
+.step h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--sub-color);
+}
+.step p {
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+/* --- 고객사 그리드 --- */
+.university-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.univ-card {
+  background: #fff;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--primary-color);
+  border: 1px solid #eee;
+  transition: var(--transition);
+}
+
+.univ-card:hover {
+  border-color: var(--sub-color);
+  color: var(--sub-color);
+  box-shadow: 0 10px 20px rgba(13, 186, 216, 0.1);
+}
+
+/* --- 컨택트 --- */
+.contact-wrapper {
+  display: flex;
+  gap: 100px;
+}
+
+.contact-info {
+  flex: 1;
+}
+.contact-info h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+.info-list {
+  margin-top: 40px;
+}
+.info-item {
+  margin-bottom: 25px;
+}
+.info-item strong {
+  display: block;
+  color: var(--sub-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.info-item span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact-simple-form {
+  flex: 1;
+  background: var(--bg-light);
+  padding: 60px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.contact-simple-form p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.btn-main {
+  background: var(--primary-color);
+  color: #fff;
+  width: 100%;
+}
+.btn-main:hover {
+  background: #011d4d;
+}
+
+/* --- 8. 푸터 (모던 리디자인) --- */
+footer {
+  background: #0a0e14; /* 조금 더 깊은 블랙으로 변경 */
+  color: #fff;
+  padding: 50px 0 30px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  text-transform: uppercase; /* 대문자 변환으로 모던함 강조 */
+  letter-spacing: 1.5px; /* 자간 조정 */
+  transition: var(--transition);
+  position: relative;
+}
+
+.footer-links a:hover {
+  color: var(--sub-color);
+  opacity: 1;
+}
+
+/* 푸터 링크 호버 시 아주 작은 점 표시 */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--sub-color);
+  border-radius: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: var(--transition);
+}
+
+.footer-links a:hover::after {
+  transform: translateX(-50%) scale(1);
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* --- 반응형 --- */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .contact-wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-box,
+  .service-box.reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .process-steps {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .university-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .nav-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    padding: 100px 40px;
+    transition: 0.5s;
+  }
+  #nav-menu.active {
+    right: 0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  }
+  .nav-list {
+    flex-direction: column;
+  }
+  .nav-link {
+    font-size: 1.5rem;
+    /* padding: 15px 0; */
+  }
+}
