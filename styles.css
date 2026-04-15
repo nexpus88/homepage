@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 body {
@@ -34,6 +35,7 @@ body {
   color: var(--text-dark);
   background-color: var(--bg-white);
   word-break: keep-all;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 .container {
@@ -357,6 +359,7 @@ header.scrolled {
   padding-left: 25px;
   position: relative;
   font-weight: 600;
+  list-style-type: none;
 }
 
 .check-list li::before {
@@ -558,6 +561,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
+
+  .flex-between {
+    padding: 0 20px; /* 모바일에서 패딩 축소 */
+  }
+
   .section {
     padding: 80px 0;
   }
